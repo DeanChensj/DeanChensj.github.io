@@ -15,7 +15,7 @@ categories: Technical
 	ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
 
 
-####解决办法：
+<h4>解决办法：</h4>
 首先进入系统Preference，选择MySQL, 点击 ‘Stop MySQL Server’.
 
 打开terminal， 进入mysql启动目录并开启root权限,消除MySQL的安全检查.
