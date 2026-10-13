@@ -35,9 +35,10 @@ layout: default
   <div class="bento-grid">
     <!-- Featured 1: Jiangshan Map -->
     <article class="bento-card bento-featured accent-amber">
-      <a class="card-preview" href="/jiangshan-map/" target="_blank" rel="noopener">
+      <button type="button" class="card-preview" data-lightbox-src="{{ '/assets/jiangshan-preview.webp' | prepend: site.baseurl }}" data-lightbox-title="江山时序 · Jiangshan Historical Atlas (741 CE · 唐开元二十九年 · 长安)" data-lightbox-link="/jiangshan-map/" aria-label="Zoom Jiangshan Historical Atlas screenshot">
         <img src="{{ '/assets/jiangshan-preview.webp' | prepend: site.baseurl }}" alt="Jiangshan Historical Atlas screenshot" loading="lazy">
-      </a>
+        <span class="zoom-badge">🔍 Click to expand</span>
+      </button>
       <div class="card-top">
         <div class="card-icon">🗺️</div>
         <div class="card-badges">
@@ -58,9 +59,10 @@ layout: default
 
     <!-- Featured 2: SV Life Reboot -->
     <article class="bento-card bento-featured accent-indigo">
-      <a class="card-preview" href="/sv-life-reboot/" target="_blank" rel="noopener">
+      <button type="button" class="card-preview" data-lightbox-src="{{ '/assets/sv-life-reboot-preview.webp' | prepend: site.baseurl }}" data-lightbox-title="硅谷人生重开模拟器 · SV Life Reboot Simulator" data-lightbox-link="/sv-life-reboot/" aria-label="Zoom SV Life Reboot Simulator screenshot">
         <img src="{{ '/assets/sv-life-reboot-preview.webp' | prepend: site.baseurl }}" alt="SV Life Reboot Simulator screenshot" loading="lazy">
-      </a>
+        <span class="zoom-badge">🔍 Click to expand</span>
+      </button>
       <div class="card-top">
         <div class="card-icon">🚀</div>
         <div class="card-badges">
@@ -184,3 +186,72 @@ layout: default
     </div>
   </details>
 </section>
+
+<!-- Fullscreen Image Lightbox Modal -->
+<div id="image-lightbox" class="lightbox-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="lightbox-dialog">
+    <div class="lightbox-bar">
+      <span id="lightbox-caption" class="lightbox-title"></span>
+      <div class="lightbox-actions">
+        <a id="lightbox-app-link" class="btn btn-card-primary" href="#" target="_blank" rel="noopener">▶ Open Live App ↗</a>
+        <button type="button" id="lightbox-close" class="lightbox-close-btn" aria-label="Close preview">✕ ESC</button>
+      </div>
+    </div>
+    <div class="lightbox-img-wrap">
+      <img id="lightbox-img" src="" alt="Expanded project screenshot">
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var modal = document.getElementById('image-lightbox');
+  var modalImg = document.getElementById('lightbox-img');
+  var modalTitle = document.getElementById('lightbox-caption');
+  var modalLink = document.getElementById('lightbox-app-link');
+  var closeBtn = document.getElementById('lightbox-close');
+  if (!modal) return;
+
+  function openLightbox(src, title, link) {
+    modalImg.src = src;
+    modalTitle.textContent = title || '';
+    if (link) {
+      modalLink.href = link;
+      modalLink.style.display = 'inline-flex';
+    } else {
+      modalLink.style.display = 'none';
+    }
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.card-preview[data-lightbox-src]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      openLightbox(
+        btn.getAttribute('data-lightbox-src'),
+        btn.getAttribute('data-lightbox-title'),
+        btn.getAttribute('data-lightbox-link')
+      );
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal || e.target.classList.contains('lightbox-img-wrap')) {
+      closeLightbox();
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeLightbox();
+    }
+  });
+})();
+</script>
