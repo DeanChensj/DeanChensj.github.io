@@ -35,6 +35,9 @@ layout: default
   <div class="bento-grid">
     <!-- Featured 1: Jiangshan Map -->
     <article class="bento-card bento-featured accent-amber">
+      <a class="card-preview" href="/jiangshan-map/" target="_blank" rel="noopener">
+        <img src="{{ '/assets/jiangshan-preview.webp' | prepend: site.baseurl }}" alt="Jiangshan Historical Atlas screenshot" loading="lazy">
+      </a>
       <div class="card-top">
         <div class="card-icon">🗺️</div>
         <div class="card-badges">
@@ -55,12 +58,15 @@ layout: default
 
     <!-- Featured 2: SV Life Reboot -->
     <article class="bento-card bento-featured accent-indigo">
+      <a class="card-preview" href="/sv-life-reboot/" target="_blank" rel="noopener">
+        <img src="{{ '/assets/sv-life-reboot-preview.webp' | prepend: site.baseurl }}" alt="SV Life Reboot Simulator screenshot" loading="lazy">
+      </a>
       <div class="card-top">
         <div class="card-icon">🚀</div>
         <div class="card-badges">
-          <span class="badge badge-highlight">231+ Events</span>
-          <span class="badge">React 19 + TS</span>
-          <span class="badge">10k Fuzz Tested</span>
+          <span class="badge badge-highlight">231+ Story Events</span>
+          <span class="badge">27+ Achievements</span>
+          <span class="badge">Career &amp; FIRE Sim</span>
         </div>
       </div>
       <h3 class="card-title">硅谷人生重开模拟器 · SV Life Reboot</h3>
@@ -143,17 +149,38 @@ layout: default
 
   <div class="post-list-card">
     {% for post in site.posts %}
-      <a class="post-row" href="{{ post.url | prepend: site.baseurl }}">
-        <div class="post-row-left">
-          <span class="post-row-title">{{ post.title }}</span>
-          {% if post.date | date: "%Y" == "2016" %}
-            <span class="badge badge-subtle">2016 Time Capsule</span>
-          {% endif %}
-        </div>
-        <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">
-          {{ post.date | date: "%b %-d, %Y" }}
-        </time>
-      </a>
+      {% unless post.archived %}
+        <a class="post-row" href="{{ post.url | prepend: site.baseurl }}">
+          <div class="post-row-left">
+            <span class="post-row-title">{{ post.title }}</span>
+            {% if post.date | date: "%Y" == "2016" %}
+              <span class="badge badge-subtle">2016</span>
+            {% endif %}
+          </div>
+          <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </time>
+        </a>
+      {% endunless %}
     {% endfor %}
   </div>
+
+  <details class="archive-drawer">
+    <summary class="archive-summary">Archived Posts</summary>
+    <div class="post-list-card archive-list">
+      {% for post in site.posts %}
+        {% if post.archived %}
+          <a class="post-row" href="{{ post.url | prepend: site.baseurl }}">
+            <div class="post-row-left">
+              <span class="post-row-title">{{ post.title }}</span>
+              <span class="badge badge-subtle">Archived</span>
+            </div>
+            <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%b %-d, %Y" }}
+            </time>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </details>
 </section>
