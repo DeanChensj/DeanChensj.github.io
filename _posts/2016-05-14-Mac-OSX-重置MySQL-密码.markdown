@@ -3,6 +3,7 @@ layout: post
 title:  "Mac OSX 重置 MySQL 密码"
 date:   2016-05-14 10:30:00 +0800
 categories: Technical
+archived: true
 ---
 
 **首先声明我是web基础约等于零的渣渣。**

@@ -130,10 +130,10 @@ layout: default
       </div>
       <h3 class="card-title">Agent Development Kit (ADK)</h3>
       <p class="card-desc">
-        Contributor to <code>google/adk-python</code> — an open-source, code-first Python toolkit for building, evaluating, and deploying AI agents.
+        Core contributor to <code>google/adk-python</code> — an open-source, code-first Python toolkit for building, evaluating, and orchestrating deterministic &amp; dynamic AI agent workflows.
       </p>
       <div class="card-footer">
-        <a class="btn btn-card-primary" href="https://google.github.io/adk-docs/" target="_blank" rel="noopener">ADK Docs ↗</a>
+        <a class="btn btn-card-primary" href="https://cloud.google.com/blog/topics/developers-practitioners/graph-workflows-in-adk-everything-you-need-to-know/" target="_blank" rel="noopener">Cloud Blog ↗</a>
         <a class="btn btn-card-ghost" href="https://github.com/google/adk-python" target="_blank" rel="noopener">GitHub</a>
       </div>
     </article>
@@ -152,9 +152,12 @@ layout: default
   <div class="post-list-card">
     {% for post in site.posts %}
       {% unless post.archived %}
-        <a class="post-row" href="{{ post.url | prepend: site.baseurl }}">
+        <a class="post-row" href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}" {% if post.external_url %}target="_blank" rel="noopener"{% endif %}>
           <div class="post-row-left">
             <span class="post-row-title">{{ post.title }}</span>
+            {% if post.external_source %}
+              <span class="badge badge-highlight">{{ post.external_source }}</span>
+            {% endif %}
             {% if post.date | date: "%Y" == "2016" %}
               <span class="badge badge-subtle">2016</span>
             {% elsif post.categories and post.categories.size > 0 %}
