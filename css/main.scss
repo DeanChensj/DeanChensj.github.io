@@ -749,6 +749,78 @@ code {
   }
 }
 
+/* 404 Page */
+.not-found-card {
+  max-width: 640px;
+  margin: 40px auto;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 56px 32px;
+}
+
+.not-found-code {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+
+.not-found-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.not-found-desc {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  margin-bottom: 28px;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.not-found-quicklinks {
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.quicklinks-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.quicklinks-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+
+  .badge {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    color: var(--text);
+  }
+
+  .badge:hover {
+    border-color: var(--accent);
+    background: rgba(56, 189, 248, 0.12);
+  }
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
