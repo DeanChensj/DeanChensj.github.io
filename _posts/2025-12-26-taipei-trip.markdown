@@ -17,7 +17,7 @@ categories: [Travel, Essay]
   <img src="/assets/blog/taipei-101-alley.webp" alt="台北旧巷弄与红灯笼之间仰望台北 101" loading="lazy">
   <figcaption>
     <span>旧巷弄与红灯笼之间仰望台北 101</span>
-    <span class="fig-zoom-hint">🔍 点击看大图</span>
+    <span class="fig-zoom-hint"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>点击看大图</span>
   </figcaption>
 </figure>
 
@@ -27,7 +27,7 @@ categories: [Travel, Essay]
   <img src="/assets/blog/taipei-chibifu.webp" alt="台北故宫苏轼《前赤壁赋》真迹" loading="lazy">
   <figcaption>
     <span>台北故宫 · 苏轼《前赤壁赋》真迹（元丰五年 · 1082 年书于黄州）</span>
-    <span class="fig-zoom-hint">🔍 点击看大图</span>
+    <span class="fig-zoom-hint"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>点击看大图</span>
   </figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ categories: [Travel, Essay]
   <img src="/assets/blog/taipei-music-center.webp" alt="台北流行音乐中心复古列车展区" loading="lazy">
   <figcaption>
     <span>台北流行音乐中心 · 复古台铁车厢展区</span>
-    <span class="fig-zoom-hint">🔍 点击看大图</span>
+    <span class="fig-zoom-hint"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>点击看大图</span>
   </figcaption>
 </figure>
 

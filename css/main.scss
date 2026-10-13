@@ -354,6 +354,9 @@ code {
   position: absolute;
   right: 10px;
   bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 500;
@@ -784,10 +787,14 @@ code {
     }
 
     .fig-zoom-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--text-muted);
       white-space: nowrap;
+      cursor: pointer;
     }
   }
 
