@@ -3,6 +3,7 @@ layout: post
 title:  "My first Blog"
 date:   2016-03-30 14:48:15 +0800
 categories: Personal
+archived: true
 ---
 第一次发博文，纪念一下。不知道下一次想起来要更新会是什么时候...
 
