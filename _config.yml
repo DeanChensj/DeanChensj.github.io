@@ -1,19 +1,11 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-
-title: Dean's site.
+title: Dean Chen
 email: deancsj@gmail.com
-description: > # It is an awesome site:).
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://deanchensj.github.io" # the base hostname & protocol for your site
+description: >-
+  Software Engineer @ Google working on AI Agents (adk-python).
+  Building interactive web apps, historical maps, and games through vibecoding.
+baseurl: ""
+url: "https://deanchen.me"
 twitter_username: DeanChen
-github_username:  DeanChensj
+github_username: DeanChensj
 
-# Build settings
 markdown: kramdown

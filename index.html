@@ -2,22 +2,158 @@
 layout: default
 ---
 
-<div class="home">
+<section class="hero">
+  <div class="hero-badge">
+    <span class="status-dot"></span>
+    <span>Software Engineer @ Google · AI Agents &amp; Vibecoding</span>
+  </div>
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="hero-title">
+    Hi, I'm <span class="gradient-text">Dean Chen</span>.
+  </h1>
 
-  <ul class="post-list">
+  <p class="hero-subtitle">
+    I work on open-source AI agent infrastructure (<a href="https://github.com/google/adk-python" target="_blank" rel="noopener"><code>google/adk-python</code></a>) at Google. Outside of work, I love <strong>vibecoding</strong> interactive historical atlases, simulation games, and data-driven web tools.
+  </p>
+
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#projects">Explore Projects ↓</a>
+    <a class="btn btn-secondary" href="{{ site.baseurl }}/about/">About Me →</a>
+    <a class="btn btn-ghost" href="https://github.com/DeanChensj" target="_blank" rel="noopener">GitHub (@DeanChensj) ↗</a>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="section-header">
+    <div>
+      <span class="section-eyebrow">VIBECODING PORTFOLIO</span>
+      <h2 class="section-title">Interactive Apps &amp; Builds</h2>
+    </div>
+    <p class="section-desc">Live browser apps hosted directly under <code>deanchen.me/*</code></p>
+  </div>
+
+  <div class="bento-grid">
+    <!-- Featured 1: Jiangshan Map -->
+    <article class="bento-card bento-featured accent-amber">
+      <div class="card-top">
+        <div class="card-icon">🗺️</div>
+        <div class="card-badges">
+          <span class="badge badge-highlight">⭐ 15 Stars</span>
+          <span class="badge">403 BCE – 2026 CE</span>
+          <span class="badge">Historical GIS</span>
+        </div>
+      </div>
+      <h3 class="card-title">江山时序 · Jiangshan Historical Atlas</h3>
+      <p class="card-desc">
+        An interactive historical atlas spanning over 2,400 years of Chinese territorial evolution, administrative genealogy, major battles, and classical poetry geography.
+      </p>
+      <div class="card-footer">
+        <a class="btn btn-card-primary" href="/jiangshan-map/" target="_blank" rel="noopener">▶ Launch Atlas ↗</a>
+        <a class="btn btn-card-ghost" href="https://github.com/DeanChensj/jiangshan-map" target="_blank" rel="noopener">Source Code</a>
+      </div>
+    </article>
+
+    <!-- Featured 2: SV Life Reboot -->
+    <article class="bento-card bento-featured accent-indigo">
+      <div class="card-top">
+        <div class="card-icon">🚀</div>
+        <div class="card-badges">
+          <span class="badge badge-highlight">231+ Events</span>
+          <span class="badge">React 19 + TS</span>
+          <span class="badge">10k Fuzz Tested</span>
+        </div>
+      </div>
+      <h3 class="card-title">硅谷人生重开模拟器 · SV Life Reboot</h3>
+      <p class="card-desc">
+        An immersive life &amp; career simulation game for Silicon Valley engineers. Navigate F1/H1B/PERM immigration chains, L3→L8 promotions, Bay Area real estate, and FIRE.
+      </p>
+      <div class="card-footer">
+        <a class="btn btn-card-primary" href="/sv-life-reboot/" target="_blank" rel="noopener">▶ Play Simulator ↗</a>
+        <a class="btn btn-card-ghost" href="https://github.com/DeanChensj/sv-life-reboot" target="_blank" rel="noopener">Source Code</a>
+      </div>
+    </article>
+
+    <!-- Card 3: Credit Card Benefits Tracker -->
+    <article class="bento-card">
+      <div class="card-top">
+        <div class="card-icon">💳</div>
+        <div class="card-badges">
+          <span class="badge badge-highlight">⭐ 6 Stars</span>
+          <span class="badge">FinTech Web App</span>
+        </div>
+      </div>
+      <h3 class="card-title">Credit Card Benefits Tracker</h3>
+      <p class="card-desc">
+        One-stop dashboard to track recurring monthly, quarterly, and annual credit card statement credits, perks, and effective annual fees.
+      </p>
+      <div class="card-footer">
+        <a class="btn btn-card-primary" href="/cc-benefits-tracker/" target="_blank" rel="noopener">▶ Open Tracker ↗</a>
+        <a class="btn btn-card-ghost" href="https://github.com/DeanChensj/cc-benefits-tracker" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <!-- Card 4: World Cup Map -->
+    <article class="bento-card">
+      <div class="card-top">
+        <div class="card-icon">⚽</div>
+        <div class="card-badges">
+          <span class="badge">Data Visualization</span>
+          <span class="badge">Interactive Map</span>
+        </div>
+      </div>
+      <h3 class="card-title">World Cup Interactive Map</h3>
+      <p class="card-desc">
+        Interactive geographical visualization exploring World Cup tournament history, championship runs, and global football footprints.
+      </p>
+      <div class="card-footer">
+        <a class="btn btn-card-primary" href="/world-cup-map/" target="_blank" rel="noopener">▶ Explore Map ↗</a>
+        <a class="btn btn-card-ghost" href="https://github.com/DeanChensj/world-cup-map" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <!-- Card 5: Open Source ADK -->
+    <article class="bento-card">
+      <div class="card-top">
+        <div class="card-icon">🤖</div>
+        <div class="card-badges">
+          <span class="badge">Google Open Source</span>
+          <span class="badge">Python SDK</span>
+        </div>
+      </div>
+      <h3 class="card-title">Agent Development Kit (ADK)</h3>
+      <p class="card-desc">
+        Contributor to <code>google/adk-python</code> — an open-source, code-first Python toolkit for building, evaluating, and deploying AI agents.
+      </p>
+      <div class="card-footer">
+        <a class="btn btn-card-primary" href="https://google.github.io/adk-docs/" target="_blank" rel="noopener">ADK Docs ↗</a>
+        <a class="btn btn-card-ghost" href="https://github.com/google/adk-python" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="writing" class="section">
+  <div class="section-header">
+    <div>
+      <span class="section-eyebrow">WRITING &amp; NOTES</span>
+      <h2 class="section-title">Blog Posts</h2>
+    </div>
+    <a class="rss-pill" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed ↗</a>
+  </div>
+
+  <div class="post-list-card">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+      <a class="post-row" href="{{ post.url | prepend: site.baseurl }}">
+        <div class="post-row-left">
+          <span class="post-row-title">{{ post.title }}</span>
+          {% if post.date | date: "%Y" == "2016" %}
+            <span class="badge badge-subtle">2016 Time Capsule</span>
+          {% endif %}
+        </div>
+        <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%b %-d, %Y" }}
+        </time>
+      </a>
     {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+  </div>
+</section>
