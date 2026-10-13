@@ -157,6 +157,8 @@ layout: default
             <span class="post-row-title">{{ post.title }}</span>
             {% if post.date | date: "%Y" == "2016" %}
               <span class="badge badge-subtle">2016</span>
+            {% elsif post.categories and post.categories.size > 0 %}
+              <span class="badge">{{ post.categories | first }}</span>
             {% endif %}
           </div>
           <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">
@@ -186,72 +188,3 @@ layout: default
     </div>
   </details>
 </section>
-
-<!-- Fullscreen Image Lightbox Modal -->
-<div id="image-lightbox" class="lightbox-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="lightbox-dialog">
-    <div class="lightbox-bar">
-      <span id="lightbox-caption" class="lightbox-title"></span>
-      <div class="lightbox-actions">
-        <a id="lightbox-app-link" class="btn btn-card-primary" href="#" target="_blank" rel="noopener">▶ Open Live App ↗</a>
-        <button type="button" id="lightbox-close" class="lightbox-close-btn" aria-label="Close preview">✕ ESC</button>
-      </div>
-    </div>
-    <div class="lightbox-img-wrap">
-      <img id="lightbox-img" src="" alt="Expanded project screenshot">
-    </div>
-  </div>
-</div>
-
-<script>
-(function() {
-  var modal = document.getElementById('image-lightbox');
-  var modalImg = document.getElementById('lightbox-img');
-  var modalTitle = document.getElementById('lightbox-caption');
-  var modalLink = document.getElementById('lightbox-app-link');
-  var closeBtn = document.getElementById('lightbox-close');
-  if (!modal) return;
-
-  function openLightbox(src, title, link) {
-    modalImg.src = src;
-    modalTitle.textContent = title || '';
-    if (link) {
-      modalLink.href = link;
-      modalLink.style.display = 'inline-flex';
-    } else {
-      modalLink.style.display = 'none';
-    }
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.card-preview[data-lightbox-src]').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      openLightbox(
-        btn.getAttribute('data-lightbox-src'),
-        btn.getAttribute('data-lightbox-title'),
-        btn.getAttribute('data-lightbox-link')
-      );
-    });
-  });
-
-  closeBtn.addEventListener('click', closeLightbox);
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal || e.target.classList.contains('lightbox-img-wrap')) {
-      closeLightbox();
-    }
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-      closeLightbox();
-    }
-  });
-})();
-</script>
