@@ -4,7 +4,7 @@ Personal website and vibecoding portfolio of **Dean Chen**, hosted at **[https:/
 
 ---
 
-## 👋 About Dean
+## About Dean
 
 - **Day Job**: Software Engineer @ **Google** (working on open-source AI Agent infrastructure: [`google/adk-python`](https://github.com/google/adk-python)).
 - **Education**: M.S. @ **CMU** · B.S. in CS @ **SJTU**.
@@ -17,7 +17,7 @@ Personal website and vibecoding portfolio of **Dean Chen**, hosted at **[https:/
 
 ---
 
-## 🗂️ Site Structure
+## Site Structure
 
 - [`index.html`](./index.html): Bento Grid portfolio showcasing interactive web apps and blog archive.
 - [`about.md`](./about.md): Personal bio, project backstories, and contact links (`/about/`).
