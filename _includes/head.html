@@ -43,4 +43,12 @@
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}?v={{ site.time | date: '%s' }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+  <!-- Lightweight Pageview & Visitor Counter (Vercount / Busuanzi-compatible) -->
+  <script defer src="https://events.vercount.one/js"></script>
+
+  {% if site.cloudflare_analytics_token and site.cloudflare_analytics_token != "" %}
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflare_analytics_token }}"}'></script>
+  {% endif %}
 </head>
