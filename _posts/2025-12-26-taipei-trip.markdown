@@ -3,6 +3,9 @@ layout: post
 title: "台北，还会再来"
 date: 2025-12-26 20:00:00 -0800
 categories: [Travel, Essay]
+cover: "/assets/blog/taipei-101-alley.webp"
+excerpt_text: "一个适合 solo trip，更适合两个人慢生活的城市。在台北故宫排队半小时看到苏东坡《黄州寒食帖》与《赤壁赋》真迹，在雨中的迪化老街与大稻埕骑楼间感受烟火气——也许不是台北更好，只是它更像我。"
+reading_time: "4 min read"
 ---
 
 台北，还会再来。一个适合 solo trip，更适合两个人慢生活的城市。
