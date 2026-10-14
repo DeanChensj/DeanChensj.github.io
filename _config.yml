@@ -8,3 +8,6 @@ github_username: DeanChensj
 
 markdown: kramdown
 future: true
+
+# Cloudflare Web Analytics token
+cloudflare_analytics_token: "dc645937f75341b2a7416bd1fb81b635"

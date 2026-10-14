@@ -7,10 +7,18 @@ layout: default
     <h1 class="prose-title" itemprop="name headline">{{ page.title }}</h1>
     <div class="prose-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.reading_time %}
+        <span class="meta-sep">·</span>
+        <span>{{ page.reading_time }}</span>
+      {% endif %}
       {% if page.categories and page.categories.size > 0 %}
         <span class="meta-sep">·</span>
         <span class="post-tag">{{ page.categories | join: " / " }}</span>
       {% endif %}
+      <span id="busuanzi_container_page_pv" class="post-views">
+        <span class="meta-sep">·</span>
+        <span id="busuanzi_value_page_pv">-</span> views
+      </span>
     </div>
   </header>
 

@@ -1027,10 +1027,33 @@ code {
   gap: 16px;
 }
 
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .footer-brand {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--text);
+}
+
+.footer-stats {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.post-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-desc {
