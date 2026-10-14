@@ -130,10 +130,10 @@ layout: default
       </div>
       <h3 class="card-title">Agent Development Kit (ADK)</h3>
       <p class="card-desc">
-        Core contributor to <code>google/adk-python</code> — an open-source, code-first Python toolkit for building, evaluating, and orchestrating deterministic &amp; dynamic AI agent workflows.
+        Contributor to <code>google/adk-python</code> — an open-source, code-first Python toolkit for building, evaluating, and deploying AI agents.
       </p>
       <div class="card-footer">
-        <a class="btn btn-card-primary" href="https://cloud.google.com/blog/topics/developers-practitioners/graph-workflows-in-adk-everything-you-need-to-know/" target="_blank" rel="noopener">Cloud Blog ↗</a>
+        <a class="btn btn-card-primary" href="https://google.github.io/adk-docs/" target="_blank" rel="noopener">ADK Docs ↗</a>
         <a class="btn btn-card-ghost" href="https://github.com/google/adk-python" target="_blank" rel="noopener">GitHub</a>
       </div>
     </article>
@@ -149,24 +149,34 @@ layout: default
     <a class="rss-pill" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed ↗</a>
   </div>
 
-  <div class="post-list-card">
+  <div class="post-cards-stack">
     {% for post in site.posts %}
       {% unless post.archived %}
-        <a class="post-row" href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}" {% if post.external_url %}target="_blank" rel="noopener"{% endif %}>
-          <div class="post-row-left">
-            <span class="post-row-title">{{ post.title }}</span>
-            {% if post.external_source %}
-              <span class="badge badge-highlight">{{ post.external_source }}</span>
+        <a class="post-card" href="{{ post.url | prepend: site.baseurl }}">
+          <div class="post-card-body">
+            <div class="post-card-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+              {% if post.reading_time %}
+                <span class="meta-dot">·</span>
+                <span>{{ post.reading_time }}</span>
+              {% endif %}
+              {% if post.date | date: "%Y" == "2016" %}
+                <span class="badge badge-subtle">2016</span>
+              {% elsif post.categories and post.categories.size > 0 %}
+                <span class="badge">{{ post.categories | first }}</span>
+              {% endif %}
+            </div>
+            <h3 class="post-card-title">{{ post.title }}</h3>
+            {% if post.excerpt_text %}
+              <p class="post-card-excerpt">{{ post.excerpt_text }}</p>
             {% endif %}
-            {% if post.date | date: "%Y" == "2016" %}
-              <span class="badge badge-subtle">2016</span>
-            {% elsif post.categories and post.categories.size > 0 %}
-              <span class="badge">{{ post.categories | first }}</span>
-            {% endif %}
+            <span class="post-card-cta">Read Article →</span>
           </div>
-          <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </time>
+          {% if post.cover %}
+            <div class="post-card-thumb">
+              <img src="{{ post.cover | prepend: site.baseurl }}" alt="{{ post.title }}" loading="lazy">
+            </div>
+          {% endif %}
         </a>
       {% endunless %}
     {% endfor %}

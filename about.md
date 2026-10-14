@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-Hi! I'm **Dean Chen**, a Software Engineer at **Google** in the San Francisco Bay Area, working on open-source AI Agent infrastructure (**[`google/adk-python`](https://github.com/google/adk-python)** — see my Google Cloud Blog deep dive on **[Graph workflows in ADK](https://cloud.google.com/blog/topics/developers-practitioners/graph-workflows-in-adk-everything-you-need-to-know/)**). Before joining Google, I studied Computer Science at **Shanghai Jiao Tong University (SJTU)** and **Carnegie Mellon University (CMU)**.
+Hi! I'm **Dean Chen**, a Software Engineer at **Google** in the San Francisco Bay Area, working on open-source AI Agent infrastructure (**[`google/adk-python`](https://github.com/google/adk-python)**). Before joining Google, I studied Computer Science at **Shanghai Jiao Tong University (SJTU)** and **Carnegie Mellon University (CMU)**.
 
 Outside of work, I enjoy **vibecoding** — spending hours turning random curiosities into interactive web apps, games, and digital experiments without feeling tired.
 
