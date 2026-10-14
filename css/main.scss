@@ -801,6 +801,28 @@ code {
   .post-figure-portrait {
     max-width: 460px;
   }
+
+  .post-figure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 2em 0;
+
+    .post-figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+
+      img {
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+      }
+
+      figcaption {
+        margin-top: auto;
+      }
+    }
+  }
 }
 
 /* 404 Page */
@@ -929,6 +951,9 @@ code {
   }
   .prose-card {
     padding: 24px;
+  }
+  .prose-body .post-figure-grid {
+    grid-template-columns: 1fr;
   }
   .post-row {
     flex-direction: column;
