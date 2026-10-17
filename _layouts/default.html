@@ -81,6 +81,30 @@
           closeLightbox();
         }
       });
+
+      // Live GitHub Star count sync
+      document.querySelectorAll('[data-gh-stars]').forEach(function(badge) {
+        var repo = badge.getAttribute('data-gh-stars');
+        if (!repo) return;
+        var cacheKey = 'gh_stars_' + repo;
+        try {
+          var cached = sessionStorage.getItem(cacheKey);
+          if (cached) {
+            badge.textContent = cached + ' Stars';
+            return;
+          }
+        } catch (e) {}
+        fetch('https://api.github.com/repos/' + repo)
+          .then(function(r) { return r.ok ? r.json() : null; })
+          .then(function(data) {
+            if (data && typeof data.stargazers_count === 'number') {
+              var count = data.stargazers_count.toLocaleString();
+              badge.textContent = count + ' Stars';
+              try { sessionStorage.setItem(cacheKey, count); } catch (e) {}
+            }
+          })
+          .catch(function() {});
+      });
     })();
     </script>
 
