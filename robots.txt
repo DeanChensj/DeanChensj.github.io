@@ -33,3 +33,6 @@ Allow: /
 
 Sitemap: https://deanchen.me/sitemap.xml
 Sitemap: https://deanchen.me/jiangshan-map/sitemap.xml
+# LLM Context Indexes:
+# https://deanchen.me/llms.txt
+# https://deanchen.me/jiangshan-map/llms.txt

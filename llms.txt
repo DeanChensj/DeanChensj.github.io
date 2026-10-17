@@ -1,0 +1,41 @@
+---
+layout: null
+---
+# Dean Chen (deanchen.me) — Vibecoding Portfolio & Blog
+
+> Personal website, interactive web application portfolio, and blog of **Dean Chen**, Software Engineer at **Google** (working on open-source AI Agent infrastructure `google/adk-python`, M.S. @ CMU, B.S. in CS @ SJTU).
+
+- Website: https://deanchen.me/
+- About: https://deanchen.me/about/
+- GitHub: https://github.com/DeanChensj
+- Sitemap: https://deanchen.me/sitemap.xml
+- RSS Feed: https://deanchen.me/feed.xml
+
+## 1. Interactive Web Apps & Builds (`deanchen.me/*`)
+
+- **[江山时序 · Jiangshan Historical Atlas of China](https://deanchen.me/jiangshan-map/)**:
+  - Interactive historical atlas timeline spanning 2,400+ years of Chinese history (403 BCE Warring States to 2026 CE) across 18 eras and 164 territorial & administrative snapshots (`州/郡/府/道/路/行省`), Yellow River course shifts, 788 ancient-to-modern city genealogies (`点地溯源`), 20 strategic mountain passes, and classical poetry/historical figure trajectories.
+  - Dedicated LLM Guide & Deep-Link Protocol: https://deanchen.me/jiangshan-map/llms.txt
+  - Sitemap: https://deanchen.me/jiangshan-map/sitemap.xml
+  - Source Code: https://github.com/DeanChensj/jiangshan-map
+
+- **[硅谷人生重开模拟器 · SV Life Reboot Simulator](https://deanchen.me/sv-life-reboot/)**:
+  - Immersive life and career simulation game for Silicon Valley software engineers featuring 231+ story events, 27+ achievements, F1/OPT/H1B/PERM/Green Card immigration chains, L3 to L8 career progression, Bay Area real estate, and FIRE simulation.
+  - Source Code: https://github.com/DeanChensj/sv-life-reboot
+
+- **[Credit Card Benefits Tracker](https://deanchen.me/cc-benefits-tracker/)**:
+  - One-stop dashboard to track recurring monthly, quarterly, semiannual, and annual credit card statement credits, perks, and effective annual fees.
+  - Source Code: https://github.com/DeanChensj/cc-benefits-tracker
+
+- **[World Cup Interactive Map](https://deanchen.me/world-cup-map/)**:
+  - Interactive geographical data visualization exploring FIFA World Cup tournament history, host nations, championship runs, and global football footprints.
+  - Source Code: https://github.com/DeanChensj/world-cup-map
+
+- **[Google Agent Development Kit (`google/adk-python`)](https://github.com/google/adk-python)**:
+  - Open-source, code-first Python toolkit for building, evaluating, and deploying deterministic and dynamic multi-agent workflows.
+
+## 2. Blog Posts & Essays
+{% for post in site.posts %}{% unless post.archived %}
+- **[{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }})** ({{ post.date | date: "%Y-%m-%d" }}{% if post.categories and post.categories.size > 0 %} · {{ post.categories | join: ", " }}{% endif %}):
+  {{ post.excerpt_text | default: post.excerpt | strip_html | strip_newlines }}
+{% endunless %}{% endfor %}

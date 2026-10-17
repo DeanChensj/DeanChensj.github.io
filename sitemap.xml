@@ -1,39 +1,50 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://deanchen.me/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://deanchen.me/jiangshan-map/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://deanchen.me/sv-life-reboot/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://deanchen.me/cc-benefits-tracker/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://deanchen.me/world-cup-map/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://deanchen.me/about/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  {% for post in site.posts %}{% unless post.archived %}
+  <url>
+    <loc>{{ post.url | prepend: site.baseurl | prepend: site.url | xml_escape }}</loc>
+    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  {% endunless %}{% endfor %}
 </urlset>
