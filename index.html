@@ -170,9 +170,7 @@ layout: default
                 <span class="meta-dot">·</span>
                 <span>{{ post.reading_time }}</span>
               {% endif %}
-              {% if post.date | date: "%Y" == "2016" %}
-                <span class="badge badge-subtle">2016</span>
-              {% elsif post.categories and post.categories.size > 0 %}
+              {% if post.categories and post.categories.size > 0 %}
                 <span class="badge">{{ post.categories | first }}</span>
               {% endif %}
             </div>
