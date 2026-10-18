@@ -82,28 +82,49 @@
         }
       });
 
-      // Live GitHub Star count sync
+      // Live GitHub Star count sync (5-min TTL + Shields.io fallback for rate-limited corp IPs)
       document.querySelectorAll('[data-gh-stars]').forEach(function(badge) {
         var repo = badge.getAttribute('data-gh-stars');
         if (!repo) return;
-        var cacheKey = 'gh_stars_' + repo;
+        var cacheKey = 'gh_stars_v2_' + repo;
+        var ttlMs = 5 * 60 * 1000;
+        var now = Date.now();
         try {
-          var cached = sessionStorage.getItem(cacheKey);
-          if (cached) {
-            badge.textContent = cached + ' Stars';
-            return;
+          sessionStorage.removeItem('gh_stars_' + repo);
+          var raw = localStorage.getItem(cacheKey);
+          if (raw) {
+            var cached = JSON.parse(raw);
+            if (cached && cached.count) {
+              badge.textContent = cached.count + ' Stars';
+              if (cached.ts && (now - cached.ts < ttlMs)) return;
+            }
           }
         } catch (e) {}
+
+        function applyCount(countStr) {
+          badge.textContent = countStr + ' Stars';
+          try {
+            localStorage.setItem(cacheKey, JSON.stringify({ count: countStr, ts: Date.now() }));
+          } catch (e) {}
+        }
+
         fetch('https://api.github.com/repos/' + repo)
-          .then(function(r) { return r.ok ? r.json() : null; })
+          .then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
           .then(function(data) {
             if (data && typeof data.stargazers_count === 'number') {
-              var count = data.stargazers_count.toLocaleString();
-              badge.textContent = count + ' Stars';
-              try { sessionStorage.setItem(cacheKey, count); } catch (e) {}
+              applyCount(data.stargazers_count.toLocaleString());
             }
           })
-          .catch(function() {});
+          .catch(function() {
+            fetch('https://img.shields.io/github/stars/' + repo + '.json')
+              .then(function(r) { return r.ok ? r.json() : null; })
+              .then(function(data) {
+                if (data && data.value) {
+                  applyCount(String(data.value));
+                }
+              })
+              .catch(function() {});
+          });
       });
     })();
     </script>
