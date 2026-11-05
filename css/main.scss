@@ -940,6 +940,121 @@ code {
   }
 }
 
+/* Reader Tip Jar (Collapsible Footer on Posts & Pages) */
+.tip-jar {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px dashed var(--border);
+  text-align: center;
+}
+
+.tip-details {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.tip-summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.tip-summary::-webkit-details-marker {
+  display: none;
+}
+
+.tip-summary:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-hover);
+}
+
+.tip-caret {
+  font-size: 0.78rem;
+  opacity: 0.7;
+  transition: transform 0.18s ease;
+}
+
+.tip-details[open] .tip-summary {
+  color: var(--text);
+  border-color: rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.08);
+}
+
+.tip-details[open] .tip-caret {
+  transform: rotate(180deg);
+}
+
+.tip-panel {
+  margin: 16px auto 0;
+  padding: 20px 24px;
+  width: 320px;
+  max-width: 100%;
+  background: rgba(9, 13, 22, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.tip-wechat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  img {
+    width: 204px;
+    height: 204px;
+    border-radius: 10px;
+    background: #ffffff;
+  }
+}
+
+.tip-caption {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.tip-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+.tip-intl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.tip-intl-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.tip-kofi-btn {
+  width: 100%;
+  font-size: 0.86rem;
+  padding: 8px 14px;
+}
+
 /* 404 Page */
 .not-found-card {
   max-width: 640px;
