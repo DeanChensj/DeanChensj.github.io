@@ -32,4 +32,5 @@ Almost every side project on [`deanchen.me`](/) traces back to an offline obsess
 
 ### Connect
 
+* **Email**: [deancsj@gmail.com](mailto:deancsj@gmail.com)
 * **GitHub**: [@DeanChensj](https://github.com/DeanChensj)
